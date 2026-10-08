@@ -1,0 +1,18 @@
+common_config: standards.yaml
+camera_id: A
+discovery:
+  raw_glob: 'DSC_CAM_A_*.nef'
+  filename_regex: '^DSC_CAM_A_(?P<capture_order>\d{4})_(?P<capture_time>.+)\.nef$'
+  expected_count: 315
+samples:
+  - {raw: DSC_CAM_A_0001_09_29_22-05.nef, jpg: DSC_CAM_A_0001_09_29_22-05.jpg, condition: first_night, capture_order: 1}
+  - {raw: DSC_CAM_A_0097_09_30_06-02.nef, jpg: DSC_CAM_A_0097_09_30_06-02.jpg, condition: dawn, capture_order: 97}
+  - {raw: DSC_CAM_A_0170_09_30_12-07.nef, jpg: DSC_CAM_A_0170_09_30_12-07.jpg, condition: midday, capture_order: 170}
+  - {raw: DSC_CAM_A_0243_09_30_18-02.nef, jpg: DSC_CAM_A_0243_09_30_18-02.jpg, condition: dusk, capture_order: 243}
+  - {raw: DSC_CAM_A_0300_09_30_22-47.nef, jpg: DSC_CAM_A_0300_09_30_22-47.jpg, condition: second_night, capture_order: 300}
+
+# Normalized [left, top, right, bottom], deliberately inside the card faces.
+rois:
+  gray_card: [0.365, 0.735, 0.445, 0.865]
+  white_card: [0.505, 0.735, 0.575, 0.865]
+  experiment: [0.285, 0.130, 0.710, 0.430]

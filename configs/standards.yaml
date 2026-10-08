@@ -1,0 +1,42 @@
+standard:
+  gray_reflectance: 0.18
+  white_reflectance: 0.90
+
+master:
+  dtype: float32
+  space: linear_srgb_d65
+  compression: deflate
+
+preview:
+  gray_code: 128
+  white_code: 235
+
+color_profile:
+  status: neutral_only
+
+raw:
+  demosaic: AHD
+  no_auto_scale: true
+  no_auto_bright: true
+  use_auto_wb: false
+  use_camera_wb: false
+  sensor_saturation_margin: 16
+
+quality:
+  gray_target_tolerance: 0.003
+  max_gray_channel_deviation: 0.01
+  max_gray_sensor_saturation: 0.00001
+  max_white_sensor_saturation: 0.001
+  reject_gray_near_black_fraction: 0.25
+  warn_ev: 3.0
+  warn_gray_noise_proxy_cv: 0.08
+  warn_white_lab_ab: 3.0
+  preview_gray_code_tolerance: 3
+  preview_white_code_tolerance: 5
+  preview_channel_spread: 3
+
+extraction:
+  sample_stride: 4
+  min_hsv_saturation: 0.05
+  min_hsv_value: 0.02
+  min_lch_chroma: 2.0

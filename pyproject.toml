@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raw-image-standardization"
+version = "0.3.0"
+description = "Reproducible RAW exposure, white-balance, and neutral-axis standardization"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "rawpy==0.27.1",
+  "numpy==2.5.3",
+  "tifffile==2026.9.20",
+  "pillow==12.3.0",
+  "matplotlib==3.11.2",
+  "scikit-image==0.26.0",
+  "PyYAML==6.0.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+imagecal = "imagecal.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["imagecal*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

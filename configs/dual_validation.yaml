@@ -1,0 +1,3 @@
+cameras:
+  - camera_A_validation.yaml
+  - camera_B_validation.yaml
